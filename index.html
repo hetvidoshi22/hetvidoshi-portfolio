@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Websites</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .projects-section {
+        padding: 50px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    .projects-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .project-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+
+    .project-card img {
+        max-width: 100%;
+        border-radius: 4px;
+    }
+
+    .project-card h3 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+    .project-card p {
+        color: #666;
+    }
+</style>
+
+
+<body>
+    <nav class="bg-gray-800 text-white sticky top-0 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-yellow-500">Hetvi Doshi</a>
+
+            <!-- Links (for larger screens) -->
+            <div class="hidden md:flex space-x-16 mr-16">
+                <a href="#" class="hover:text-yellow-300">Home</a>
+                <a href="#about" class="hover:text-yellow-300">About</a>
+                <a href="#projects" class="hover:text-yellow-300">Project</a>
+                <a href="https://drive.google.com/file/d/1sLl6nY6Zt7097FQaNLR0EQNPlPxK2UZ5/view?usp=drive_link"
+                    target="_blank" class="hover:text-yellow-300">Resume</a>
+                <a href="#contact" class="hover:text-yellow-300">Contact</a>
+            </div>
+
+            <!-- Social Media Links for larger screens -->
+            <div class="hidden md:flex space-x-6 mr-4">
+                <a href="https://www.linkedin.com/in/hetvi-doshi22?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/hetvidoshi22" target="_blank" class="hover:text-gray-300"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:hetvidoshi2205@gmail.com" class="hover:text-gray-300"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/9428878468" target="_blank" class="hover:text-gray-300"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="nav-toggle" class="text-gray-300 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="nav-menu" class="md:hidden hidden bg-gray-900 text-white">
+            <a href="#" class="block px-4 py-2 hover:bg-yellow-700">Home</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-yellow-700">About</a>
+            <a href="#projects" class="block px-4 py-2 hover:bg-yellow-700">Project</a>
+            <a href="https://drive.google.com/file/d/1sLl6nY6Zt7097FQaNLR0EQNPlPxK2UZ5/view?usp=drive_link"
+                target="_blank" class="block px-4 py-2 hover:bg-yellow-700">Resume</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-yellow-700">Contact</a>
+            <!-- Social Media Links for mobile -->
+            <div class="flex space-x-4 mt-4 px-4">
+                <a href="https://www.linkedin.com/in/hetvi-doshi22?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/hetvidoshi22" target="_blank" class="hover:text-gray-300"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:hetvidoshi2205@gmail.com" class="hover:text-gray-300"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/9428878468" target="_blank" class="hover:text-gray-300"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-black text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Text Content -->
+            <div class="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
+                <h1 class="text-4xl md:text-3xl font-bold mb-4 text-yellow-400">Welcome to my Portfolio</h1>
+                <p class="text-lg md:text-xl mb-6">
+                    I'm a passionate ML Engineer. I have worked upon many of my ml projects and also looking for
+                    great opportunity of deploying many other projects in upcoming time.
+                </p>
+                <a href="#projects" class="bg-yellow-400 hover:bg-yellow-600 text-black py-1 px-5 rounded-lg text-lg">
+                    Projects
+                </a>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="images/home page.jpg" alt="Hetvi's Portfolio"
+                    class="rounded-lg shadow-lg w-full h-full mt-12">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- About Image -->
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <img src="images/about.png" alt="About Image" class="rounded-lg shadow-lg w-full h-auto">
+            </div>
+
+            <!-- About Content -->
+            <div class="w-full md:w-1/2 md:pl-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-yellow-400">About Me</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-6">
+                    Hello! I'm Hetvi Doshi, a passionate and skilled machine learning engineer with a strong focus
+                    on building intelligent and data-driven solutions. With experience in AI, machine learning, and data
+                    science, I'm dedicated to solving complex problems and turning data into actionable insights.
+                </p>
+                <p class="text-lg md:text-xl text-gray-700 mb-6">
+                    My expertise lies in designing and implementing machine learning models, working with technologies
+                    such as Python, TensorFlow, Scikit-learn, and more. I'm constantly learning and experimenting with
+                    new techniques to create innovative and impactful AI-powered solutions.
+                </p>
+                <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-5 rounded-lg text-lg">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Project Section -->
+    <section class="py-10 bg-black" id="projects">
+        <div class="container mx-auto px-4 mt-8">
+            <h2 class="text-3xl font-bold text-center mb-6 text-yellow-400"> Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Project Card 1 -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="images/gym website.png" alt="Project 1" class="w-full h-40 object-contain">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">GYM Website</h3>
+                        <p class="text-gray-600">
+                            The Gym Website is a modern and responsive platform designed to showcase fitness services
+                            and promote healthy lifestyles. Built using HTML, CSS, and Tailwind CSS, the website
+                            features a clean layout with vibrant visuals and intuitive navigation. Users can easily
+                            access information about various fitness programs, class schedules, and membership
+                            options.Overall, this project demonstrates effective web design principles and the power of
+                            utility-first CSS frameworks.</p>
+                        <!-- <a href="#" class="mt-3 inline-block text-blue-500 hover:underline">View Project</a> -->
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="images/mcq generator.jpg" alt="Project 2" class="w-full h-40 object-contain">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">MCQ Generator</h3>
+                        <p class="text-gray-600">The MCQ Generator is a Python-based application designed to automate
+                            the creation of multiple-choice questions for educational purposes. Utilizing various data
+                            sources, the program generates questions along with multiple answer options and identifies
+                            the correct answer. It supports customization, allowing users to specify the number of
+                            questions and categories. The application leverages Python's file handling capabilities to
+                            save generated questions in a structured format</p>
+                        <!-- <a href="#" class="mt-3 inline-block text-blue-500 hover:underline">View Project</a> -->
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="images/bank.png" alt="Project 3" class="w-full h-40 object-contain">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Bank Management System</h3>
+                        <p class="text-gray-600">The Bank Management System is a Python-based application designed to
+                            streamline banking operations and manage customer accounts efficiently. It provides
+                            functionalities such as account creation, balance inquiry, deposits, withdrawals, and
+                            transaction history management. The system securely handles user data and performs essential
+                            operations through a command-line interface. Using Python's built-in libraries for data
+                            management, the application ensures accurate record-keeping and supports multiple user
+                            accounts. </p>
+                        <!-- <a href="#" class="mt-3 inline-block text-blue-500 hover:underline">View Project</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4 flex flex-wrap justify-between">
+
+            <!-- Left Side - Personal Information -->
+            <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Contact Information</h3>
+                <p class="text-sm">Name: Hetvi Doshi</p>
+                <p class="text-sm">Email: <a href="mailto:krushankrangani29@gmail.com"
+                        class="text-yellow-400">hetvidoshi2205@gmail.com</a></p>
+                <p class="text-sm">Phone: <a href="tel:+917778888578" class="text-yellow-400">+91 9428878468</a></p>
+                <p class="text-sm">Location: Surat, Gujarat, India</p>
+            </div>
+
+            <!-- Middle Section - Quick Links -->
+            <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Quick Links</h3>
+                <ul>
+                    <li class="mb-2">
+                        <a href="#home" class="text-sm text-gray-300 hover:text-yellow-400">Home</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#about" class="text-sm text-gray-300 hover:text-yellow-400">About Me</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#services" class="text-sm text-gray-300 hover:text-yellow-400">Project</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#contact" class="text-sm text-gray-300 hover:text-yellow-400">Resume</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Side - Social Media Icons -->
+            <div class="w-full md:w-1/3">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Follow Me</h3>
+                <div class="flex space-x-4">
+                    <!-- <a href="https://www.instagram.com/iamrk.krushank/" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/22/ffffff/instagram-new.png" alt="Instagram"
+                            class="transition-transform duration-300 hover:scale-110" />
+                    </a>
+                    <a href="https://www.facebook.com/rangani.krushank.5/" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/22/ffffff/facebook.png" alt="Facebook"
+                            class="transition-transform duration-300 hover:scale-110" />
+                    </a> -->
+                    <a href="https://www.linkedin.com/in/hetvi-doshi22?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/22/ffffff/linkedin.png" alt="LinkedIn"
+                            class="transition-transform duration-300 hover:scale-110" />
+                    </a>
+                    <a href="mailto:hetvidoshi2205@gmail.com" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/22/ffffff/gmail.png" alt="Gmail"
+                            class="transition-transform duration-300 hover:scale-110" />
+                    </a>
+                    <a href="https://github.com/hetvidoshi22" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/22/ffffff/github.png" alt="GitHub"
+                            class="transition-transform duration-300 hover:scale-110" />
+                    </a>
+                    <a href="https://wa.me/9428878468" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/22/ffffff/whatsapp.png" alt="WhatsApp"
+                            class="transition-transform duration-300 hover:scale-110" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-4">
+        <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
+
+            <!-- Left Side - Copyright -->
+            <div class="w-full md:w-auto text-center md:text-left mb-4 md:mb-0">
+                <p class="text-sm">
+                    &copy; <span id="currentYear"></span> Hetvi Doshi. All Rights Reserved.
+                </p>
+            </div>
+
+            <!-- Right Side - Terms and Privacy -->
+            <div class="w-full md:w-auto text-center md:text-right">
+                <ul class="flex justify-center md:justify-end space-x-4">
+                    <li>
+                        <a href="#" class="text-sm text-gray-300 hover:text-yellow-400">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm text-gray-300 hover:text-yellow-400">Terms of Service</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- Script for toggling mobile menu -->
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const menuLinks = document.querySelectorAll('#nav-menu a');
+
+        navToggle.addEventListener('click', (event) => {
+            navMenu.classList.toggle('hidden');
+            event.stopPropagation();
+        });
+
+        // Close the mobile menu when a menu item is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.add('hidden');
+            });
+        });
+
+        // Close the mobile menu if the user clicks outside of it
+        document.addEventListener('click', (event) => {
+            if (!navMenu.classList.contains('hidden') && !navMenu.contains(event.target) && event.target !== navToggle) {
+                navMenu.classList.add('hidden');
+            }
+        });
+
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
